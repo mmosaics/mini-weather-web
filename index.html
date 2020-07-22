@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>天气预报</title>
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=百度地图API密钥位置" type="text/javascript"></script>
+		<link href="css/myweather.css" rel="stylesheet" />
+
+
+	</head>
+	<body>
+
+		<div class="weapanel">
+
+			<div class="header-area">
+				<header class="mui-bar mui-bar-nav">
+					<h1 class="mui-title">我的天气</h1>
+				</header>
+			</div>
+			<div class="today-area">
+				<div class="weacity" align="center">
+					<div class="weacityname"><span class="mui-icon mui-icon-location"></span>天津</div>
+				</div>
+
+				<div class="weather" align="center">
+					<div class="weatemp">30°</div>
+					<div class="weatype">阴</div>
+					<div class="weawind">3级北风</div>
+					<div class="tip">感冒低发期，天气舒适，请注意多吃蔬菜水果，多喝水哦。</div>
+				</div>
+			</div>
+
+			<div class="forecast-yesterday-area">
+
+				<div class="today-and-tomorrow">
+					<div class="today">
+						<div class="today-and-tomorrow-text">
+							<label>今天</label>
+							<label class="text-right" id="today-highlow-temp">30/20℃</label>
+						</div>
+						<div class="today-and-tomorrow-type">
+							<label id="mid-today-type">多云</label>
+							<label><img src="image/icon/weather/多云.png" class="weather-icon" id="mid-today-icon"></label>
+						</div>
+					</div>
+					<div class="line" align="center"></div>
+					<div class="tomorrow">
+						<div class="today-and-tomorrow-text">
+							<label>明天</label>
+							<label class="text-right" id="tomorrow-highlow-temp">29/20℃</label>
+						</div>
+						<div class="today-and-tomorrow-type">
+							<label id="mid-tomorrow-type">多云</label>
+							<label><img src="image/icon/weather/多云.png" class="weather-icon" id="mid-tomorrow-icon"></label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="forecast">
+					<!--
+				<div class="date-text">昨天</div>
+				<div class="date-text">06/02</div>
+				<div class="wtype"></div>
+				<div><img src="image/icon/weather/多云.png" class="ficon"/></div>
+				-->
+
+					<div class="scroll-area mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted"
+					 style="height: 150px;">
+						<div class="mui-scroll" id="scroll-area">
+							<!--这里放置真实显示的DOM内容-->
+							<div class="mui-control-item" id="f1">
+								<div class="date-text">昨天</div>
+								<div class="date-time">06/02</div>
+								<div class="wtype-yesterday">暴雨</div>
+								<div><img src="image/icon/weather/多云.png" id="i1" class="ficon" /></div>
+							</div>
+							<div class="mui-control-item" id="f2">
+								<div class="date-text">今天</div>
+								<div class="date-time">06/02</div>
+								<div class="wtype">暴雨</div>
+								<div><img src="image/icon/weather/多云.png" id="i2" class="ficon" /></div>
+							</div>
+							<div class="mui-control-item" id="f3">
+								<div class="date-text">明天</div>
+								<div class="date-time">06/02</div>
+								<div class="wtype">暴雨</div>
+								<div><img src="image/icon/weather/多云.png" id="i3" class="ficon" /></div>
+							</div>
+							<div class="mui-control-item" id="f4">
+								<div class="date-text">后天</div>
+								<div class="date-time">06/02</div>
+								<div class="wtype">暴雨</div>
+								<div><img src="image/icon/weather/多云.png" id="i4" class="ficon" /></div>
+							</div>
+							<div class="mui-control-item" id="f5">
+								<div class="date-text">周六</div>
+								<div class="date-time">06/02</div>
+								<div class="wtype">暴雨</div>
+								<div><img src="image/icon/weather/多云.png" id="i5" class="ficon" /></div>
+							</div>
+							<div class="mui-control-item" id="f6">
+								<div class="date-text">周日</div>
+								<div class="date-time">06/02</div>
+								<div class="wtype">暴雨</div>
+								<img src="image/icon/weather/多云.png" id="i6" class="ficon" />
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+
+				<div class="search-area">
+					<div class="mui-input-row input-area">
+						<input type="text" placeholder="" id="search_input" style="outline: medium;">
+					</div>
+					<div class="search-button">
+						<button type="button" class="mui-btn mui-btn-blue" id="search_button">更改城市</button>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+		<script src="js/weather.js"></script>
+	</body>
+</html>
